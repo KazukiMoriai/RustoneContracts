@@ -3,7 +3,6 @@ const { ethers } = require("hardhat");
 async function main() {
   // コントラクトをデプロイするアカウントを取得
   const [deployer] = await ethers.getSigners();
-  
   console.log("Deploying contracts with the account:", deployer.address);
   
   // デプロイ前の残高をチェック
