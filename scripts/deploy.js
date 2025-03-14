@@ -11,15 +11,15 @@ async function main() {
   console.log("Account balance:", ethers.formatEther(balance), "ETH");
 
   // コントラクトのファクトリを作成
-  const PhotoRegistry = await ethers.getContractFactory("PhotoRegistry");
+  const ImageSignatureStorage = await ethers.getContractFactory("ImageSignatureStorage");
   
   // コントラクトをデプロイ
-  const photoRegistry = await PhotoRegistry.deploy();
+  const storage = await ImageSignatureStorage.deploy();
   
   // デプロイ完了を待機
-  await photoRegistry.deploymentTransaction();
+  await storage.deploymentTransaction();
   
-  console.log("PhotoRegistry deployed to:", await photoRegistry.getAddress());
+  console.log("ImageSignatureStorage deployed to:", await storage.getAddress());
 }
 
 // エラーハンドリングを含むメイン関数の実行
